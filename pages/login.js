@@ -37,50 +37,50 @@ export default function Login() {
 
   return (
     <Layout>
-      <div className="max-w-md mx-auto bg-white p-8 rounded shadow-md">
-        <h1 className="text-2xl font-bold text-gray-800 mb-6">Connexion</h1>
+      <div className="max-w-md mx-auto bg-white p-8 rounded-lg shadow-lg">
+        <h1 className="text-3xl font-bold text-gray-900 mb-6 text-center">🔐 Connexion</h1>
 
         {error && <p className="text-red-500 mb-4">{error}</p>}
 
-        <form onSubmit={handleLogin}>
-          <div className="mb-4">
-            <label htmlFor="email" className="block text-gray-700 mb-2">
-              Email
+        <form onSubmit={handleLogin} className="space-y-4">
+          <div>
+            <label htmlFor="email" className="block text-gray-700 font-medium">
+              📧 Email
             </label>
             <input
               type="email"
               id="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full p-2 border border-gray-300 rounded"
+              className="w-full p-3 border border-gray-300 rounded-lg focus:ring focus:ring-indigo-200"
               required
             />
           </div>
-          <div className="mb-6">
-            <label htmlFor="password" className="block text-gray-700 mb-2">
-              Mot de passe
+          <div>
+            <label htmlFor="password" className="block text-gray-700 font-medium">
+              🔑 Mot de passe
             </label>
             <input
               type="password"
               id="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full p-2 border border-gray-300 rounded"
+              className="w-full p-3 border border-gray-300 rounded-lg focus:ring focus:ring-indigo-200"
               required
             />
           </div>
           <button
             type="submit"
-            className="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-4 rounded"
+            className="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-3 rounded-lg shadow-md transition-all"
             disabled={loading}
           >
-            {loading ? 'Chargement...' : 'Se connecter'}
+            {loading ? '⏳ Chargement...' : '🚀 Se connecter'}
           </button>
         </form>
 
         <p className="mt-4 text-center text-gray-600">
-          Vous n'avez pas de compte ?{' '}
-          <Link href="/register" className="text-indigo-600 hover:text-indigo-800">
+          Pas encore de compte ?{' '}
+          <Link href="/register" className="text-indigo-600 hover:text-indigo-800 font-medium">
             S'inscrire
           </Link>
         </p>
